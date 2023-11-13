@@ -5,7 +5,9 @@ const MongoClient = require('mongodb').MongoClient
 require('dotenv').config()
 
 app.set('view engine', 'ejs')
+app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 let db,
 dbConnectionStr = process.env.DB_STRING,
@@ -37,15 +39,9 @@ app.post('/entries', (req, res) => {
         .catch(error => console.error(error))
 })
 
-// app.get('/', (req, res) => {
-//     db.collection('entries')
-//         .find()
-//         .toArray()
-//         .then(results => {
-//             console.log(results)
-//         })
-//         .catch(error => console.log(error))
-// })
+app.put('/entries', (req, res) => {
+    console.log(req.body)
+})
 
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port 3000`)
