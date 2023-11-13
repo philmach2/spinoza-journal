@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Spinoza Journal</h1>
+    <button>Add New Entry</button>
+
+    <form action="/entries" method="POST">
+        <h2>What inspired me today?</h2>
+        <input type="text" placeholder="Inspired..." name="inspiration" />
+        <h2>What brought me happiness today?</h2>
+        <input type="text" placeholder="Happiness..." name="happiness" />
+        <h2>What brought me deep peace and comfort today?</h2>
+        <input type="text" placeholder="Comfort..." name="comfort" />
+        <button type="submit">Submit</button>
+      </form>
+
+    <h2>Entries</h2>
+    <ul class = "entries">
+        <% for(let i = 0; i < entries.length; i++) {%>
+        <li class = "entry">
+            <span><%= entries[i].inspiration %></span>
+            <span><%= entries[i].happiness %></span>
+            <span><%= entries[i].comfort %></span>
+        </li>
+        <% } %>
+    </ul>
+
+</body>
+</html>
