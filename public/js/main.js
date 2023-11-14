@@ -16,6 +16,7 @@ update.addEventListener('click', _ => {
     .then(response => {
         window.location.reload(true)
     })
+    .catch(error => console.error(error))
 })
 
 const deleteButton = document.querySelector('#delete-button')
@@ -34,6 +35,14 @@ deleteButton.addEventListener('click', _ => {
     .then(data => {
         window.location.reload()
     })
+    .then(response => {
+        if (response === 'No entry to delete') {
+            messageDiv.textContent = 'No Separate Entry to delete'
+          } else {
+            window.location.reload(true)
+          }
+    })
+    .catch(error => console.error(error))
 })
 
 // const myJournal = [];

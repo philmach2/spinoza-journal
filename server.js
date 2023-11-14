@@ -61,11 +61,11 @@ app.put('/entries', (req, res) => {
 
 app.delete('/entries', (req, res) => {
     entriesCollection
-        .deleteOne({ inspiration: 'You were inspired.' })
+        .deleteOne({ inspiration: 'req.body.inspiration' })
         .then(result => {
-            if(result.deletedCount === 0) {
+            if (result.deletedCount === 0) {
                 return res.json('No quote to delete')
-            }
+              }
             res.json('Deleted Separate Entry')
         })
         .catch(error => console.error(error))
