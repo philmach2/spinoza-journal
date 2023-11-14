@@ -1,3 +1,5 @@
+// What if there are no more Darth Vader quotes? - Not completed
+
 const update = document.querySelector('#update-button')
 
 update.addEventListener('click', _ => {
