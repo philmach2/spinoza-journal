@@ -60,7 +60,12 @@ app.put('/entries', (req, res) => {
 })
 
 app.delete('/entries', (req, res) => {
-    
+    entriesCollection
+        .deleteOne({ inspiration: 'You were inspired.' })
+        .then(result => {
+            res.json('Deleted Separate Entry')
+        })
+        .catch(error => console.error(error))
 })
 
 app.listen(process.env.PORT, () => {
