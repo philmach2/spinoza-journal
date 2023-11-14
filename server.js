@@ -40,7 +40,23 @@ app.post('/entries', (req, res) => {
 })
 
 app.put('/entries', (req, res) => {
-    console.log(req.body)
+    entriesCollection
+        .findOneAndUpdate({ inspiration: 'What inspired me today?' }, 
+            {
+                $set: {
+                    inspiration: req.body.inspiration,
+                    happiness: req.body.happiness,
+                    comfort: req.body.comfort,
+                },
+            }, 
+            {
+                upsert: true,
+            }
+        )
+        .then(result => {
+            res.json('Success')
+        })
+        .catch(error => console.error(error))
 })
 
 app.listen(process.env.PORT, () => {

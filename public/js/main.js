@@ -10,6 +10,12 @@ update.addEventListener('click', _ => {
             comfort: 'You were comfortable.',
         }),
     })
+    .then(res => {
+        if (res.ok) return res.json()
+    })
+    .then(response => {
+        window.location.reload(true)
+    })
 })
 
 // const myJournal = [];
