@@ -59,6 +59,10 @@ app.put('/entries', (req, res) => {
         .catch(error => console.error(error))
 })
 
+app.delete('/entries', (req, res) => {
+    
+})
+
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port 3000`)
 })
