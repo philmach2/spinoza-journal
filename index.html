@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinoza Journal</title>
+</head>
+<body>
+    <header>
+        <h1>S P I N O Z A J O U R N A L</h1>
+        <p>Introducing a journaling application inspired by the philosophy of Baruch Spinoza, inviting you to ponder three intriguing questions every day for thirty days. It's a journey to explore what brings you inspiration, happiness, and comfort, guiding you towards a deeper understanding of your life's direction.</p>
+    </header>
+
+    <section>
+        <div id="journalContainer">
+
+        </div>
+    </section>
+
+    <!-- I want 3 buttons on the screen. Each one clicked brings up the dialog for the specific question.
+    When a journal entry for the specified entry is complete, I want it to close and for the button to change colors. -->
+
+
+    <section>
+        <div id="entryContainer">
+            <button>Today's Entry</button>
+
+        <dialog>
+            <form action="">
+                <div>
+                    <p>What inspired you today?</p>
+                    <textarea id="inspired" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+        </dialog>
+        <dialog>
+            <form action="">
+                <div>
+                    <p>What brought you happiness today?</p>
+                    <textarea id="happiness" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+        </dialog>
+        <dialog>
+            <form action="">
+                <div>
+                    <p>What brought you deep peace and comfort today?</p>
+                    <textarea id="comfort" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+        </dialog>
+
+        <!-- I originally had this in a div with the ID of "entryContainer" -->
+        <!-- <form id="addEntry">
+            <div>
+                <p>What inspired you today?</p>
+                <textarea id="inspired" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <p>What brought you happiness today?</p>
+                <textarea id="happiness" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <p>What brought you deep peace and comfort today?</p>
+                <textarea id="comfort" cols="30" rows="10"></textarea>
+            </div>
+            <button id="addEntryBtn">Add Entry</button>
+        </form> -->
+        
+
+
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+<script src="main.js"></script> 
+</body>
+</html>
